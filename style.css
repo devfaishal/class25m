@@ -6,6 +6,11 @@ body{
 	font-size: 14px;
 	font-weight: 600;
 	padding: 11px 20px 8px 20px;
+	transition: all .5s;
+	position: relative;
+	z-index: 1;
+	overflow: hidden;
+	border: 0;
 }
 /* Pricing Section */
 .pricing_section{
@@ -15,6 +20,7 @@ body{
 	color: #6c79e7;
 	font-weight: 501;
 	font-size: 13px;
+	transition-delay: 10s;
 }
 .pricing_header h2 {
 	font-weight: 700;
@@ -35,20 +41,37 @@ body{
 	font-weight: 600;
 	color: #acb5c8;
 }
+
+/* Pricing Card */
 .pricing_card{
     background: #fff;
     padding: 50px 0;
+	transition: all .6s;
 }
 .card-title h6 {
 	font-size: 18px;
 	font-weight: 600;
 	margin-bottom: 29px;
+	transition: all .6s;
+	transition-delay: .4s;
 }
 .card-title h3 {
 	font-size: 35px;
 	font-weight: 600;
 	margin-bottom: 95px;
-
+	transition: all .6s;
+	transition-delay: .4s;
+}
+.card-title{
+	position: relative;
+}
+.card-title p {
+	font-size: 14px;
+	position: absolute;
+	top: 96px;
+	left: 132px;
+	color: transparent;
+	transition: .6s;
 }
 .card-text ul {
 	margin-bottom: 23px;
@@ -62,14 +85,61 @@ body{
 	width: 175px;
 	height: 1px;
 	background: #abacb84d;
+
+}
+.pricing_card:hover ul::before {
+	background: #ffffff73;
 }
 .card-text ul li {
 	color: #abacb8;
 	font-weight: 500;
 	margin: 13px 0;
 	font-size: 14px;
+	transition: all .5s;
 }
-
+.card_button{
+	position: relative;
+}
+.card_button .btn-primary::after{
+	content: "";
+	position: absolute;
+	top: 0;
+	left: 0;
+	background: #2f65ee;
+	color: #fff;
+	width: 0;
+	height: 100%;
+	z-index: -1;
+	visibility: hidden;
+	transition: all .6s;
+}
+/* Hover Part */
+.pricing_card:hover{
+	background: #2f65eb;
+}
+.pricing_card:hover h6{
+	color: #fff;
+}
+.pricing_card:hover h3{
+	color: #fff;
+}
+.pricing_card:hover .card-title p{
+	color: #fff;
+}
+.pricing_card:hover ul li{
+	color: #fff;
+}
+.pricing_card:hover .btn-primary{
+	background: #fff;
+	color: #6288e6;
+}
+.card_button .btn-primary:hover{
+	color: #d9e4fe;
+}
+.card_button .btn-primary:hover::after{
+	width: 100%;
+	visibility: visible;
+}
 /* About Service Section */
 .about_service_section{
     background: url(https://i.ibb.co/rHpV6nm/free-bg.jpg) no-repeat center center;
@@ -116,6 +186,29 @@ body{
 	color: #3884f7;
 	padding: 16px 24px 12px 24px;
 	font-weight: 700;
+	border: 1px solid transparent;
+	position: relative;
+}
+.about_service_content_btn .btn-primary:hover{
+	color: #d9e4fe;
+}
+.about_service_content_btn .btn-primary::after{
+	content: "";
+	position: absolute;
+	top: 0;
+	left: 0;
+	background: #2f65ee;
+	color: #fff;
+	width: 0;
+	height: 100%;
+	z-index: -1;
+	visibility: hidden;
+	transition: all .6s;
+
+}
+.about_service_content_btn .btn-primary:hover::after{
+	width: 100%;
+	visibility: visible;
 }
 /* Newsletter Section */
 .newsletter_section{
